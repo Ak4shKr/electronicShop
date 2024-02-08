@@ -83,4 +83,14 @@ export const items = [
       "Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, ",
     price: "89999",
   },
+  // {
+  //   id: 10,
+  //   category: "mobiles",
+  //   title: "Google Pixel 7a 5G",
+  //   imgSrc: "https://m.media-amazon.com/images/I/61jNwWb+G0L._SX466_.jpg",
+  //   amazonLink:
+  //     "https://www.amazon.in/Pixel-Sea-8GB-128GB-Storage/dp/B0CQ8JMKL3/ref=sr_1_1?keywords=Google%2BPixel%2BPhone&sr=8-1&th=1",
+  //   description: "Pixel 7a 5G (Sea, 8GB RAM, 128GB Storage) ",
+  //   price: "40999",
+  // },
 ];

@@ -1,28 +1,40 @@
-import "./App.css";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ProductDetails from "./components/ProductDetails";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductDetail from "./components/ProductDetails";
 import SearchItem from "./components/SearchItem";
 import Cart from "./components/Cart";
 import { items } from "./components/Data";
-import { useState } from "react";
 
-function App() {
+const App = () => {
   const [data, setData] = useState([...items]);
+  const [cart, setCart] = useState([]);
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar cart={cart} setData={setData} />
         <Routes>
-          <Route path="/" element={<Product items={data} />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/search/:term" element={<SearchItem />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/"
+            element={<Product cart={cart} setCart={setCart} items={data} />}
+          />
+          <Route
+            path="/product/:id"
+            element={<ProductDetail cart={cart} setCart={setCart} />}
+          />
+          <Route
+            path="/search/:term"
+            element={<SearchItem cart={cart} setCart={setCart} />}
+          />
+          <Route
+            path="/cart"
+            element={<Cart cart={cart} setCart={setCart} />}
+          />
         </Routes>
       </Router>
     </>
   );
-}
+};
 
 export default App;
